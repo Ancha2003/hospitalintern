@@ -1,0 +1,94 @@
+/* Full-page background */
+.login-page {
+  background: url("https://images.unsplash.com/photo-1588776814546-ec3e1f1a6fbb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80")
+    no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Card container */
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Heading */
+.login-card h2 {
+  color: #0077cc;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.login-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+/* Input fields */
+.login-card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s ease;
+}
+
+.login-card input:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+/* Button */
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.login-card button:hover {
+  background: #005fa3;
+  transform: translateY(-2px);
+}
+
+/* Error message */
+.login-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card h2 {
+    font-size: 24px;
+  }
+}

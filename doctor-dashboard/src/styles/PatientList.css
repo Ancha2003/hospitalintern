@@ -1,0 +1,8 @@
+.container { padding: 2rem; }
+.form-card { background: white; padding: 2rem; border-radius: 10px; max-width: 500px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; gap: 1rem; }
+.form-card input, .form-card select { padding: 0.5rem; border-radius: 5px; border: 1px solid #ccc; width: 100%; }
+.form-card button { padding: 0.6rem; border-radius: 5px; border: none; background: #3b82f6; color: white; cursor: pointer; }
+
+.patients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.patient-card { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05); text-align: center; }
+.patient-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 0.5rem; }

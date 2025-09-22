@@ -1,0 +1,115 @@
+.home-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Section */
+.home-header {
+  background: linear-gradient(135deg, #2d9cdb, #27ae60);
+  color: white;
+  padding: 60px 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.home-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+}
+
+.home-header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+/* Cards */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.role-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 320px;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.role-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.role-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.role-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.role-card p {
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+/* Buttons */
+.role-btn {
+  background: #2d9cdb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.role-btn:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.doctor-btn {
+  background: #2d9cdb;
+}
+
+.register-btn {
+  background: #27ae60;
+}
+
+.patient-btn {
+  background: #f39c12;
+}
+
+.patient-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Footer */
+.home-footer {
+  margin-top: auto;
+  color: #888;
+  padding: 15px 0;
+}

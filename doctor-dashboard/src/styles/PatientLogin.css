@@ -1,0 +1,80 @@
+/* PatientLogin.css */
+
+/* Full page background */
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card container */
+.login-card {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card header */
+.login-card h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+/* Error or success message */
+.login-error {
+  margin-bottom: 1rem;
+  color: #d93025; /* red for errors */
+  font-weight: 500;
+}
+
+.login-success {
+  margin-bottom: 1rem;
+  color: #188038; /* green for success */
+  font-weight: 500;
+}
+
+/* Form inputs */
+.login-card form input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease;
+}
+
+.login-card form input:focus {
+  border-color: #7f5af0;
+  outline: none;
+}
+
+/* Submit button */
+.login-card form button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: #7f5af0;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card form button:hover {
+  background-color: #5c3cb2;
+}

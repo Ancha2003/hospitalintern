@@ -1,0 +1,202 @@
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Dashboard header */
+.dashboard-header-section {
+  background-color: #f4f6fc;
+  padding: 30px 20px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.dashboard-header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.doctor-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4f46e5;
+}
+
+.doctor-intro h2 {
+  margin: 0 0 8px 0;
+  color: #1e1e2f;
+}
+
+.doctor-intro p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 8px 16px;
+  border: none;
+  background-color: #e0e7ff;
+  color: #4f46e5;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn.active {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.filter-btn:hover {
+  background-color: #6366f1;
+  color: #fff;
+}
+
+/* Appointment cards */
+.appointments-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.appointment-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.appointment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Patient Info */
+.patient-info {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.patient-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4f46e5;
+}
+
+.patient-info h4 {
+  margin: 0;
+  color: #1e1e2f;
+}
+
+.patient-info p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 12px;
+  text-transform: capitalize;
+}
+
+.status-badge.pending {
+  background-color: #fde68a;
+  color: #b45309;
+}
+
+.status-badge.completed {
+  background-color: #bbf7d0;
+  color: #166534;
+}
+
+.status-badge.confirmed {
+  background-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.status-badge.cancelled {
+  background-color: #fecaca;
+  color: #991b1b;
+}
+
+.status-badge.no-prescription {
+  background-color: #f3f4f6;
+  color: #6b7280;
+}
+
+/* Prescription buttons */
+.prescription-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pres-btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.pres-btn.view {
+  background-color: #4f46e5;
+  color: #fff;
+}
+
+.pres-btn.edit {
+  background-color: #facc15;
+  color: #1f2937;
+}
+
+.pres-btn.add {
+  background-color: #22c55e;
+  color: #fff;
+}
+
+.pres-btn:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+.dashboard-footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: #6b7280;
+  font-size: 14px;
+}

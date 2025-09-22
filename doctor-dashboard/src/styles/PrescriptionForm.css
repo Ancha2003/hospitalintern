@@ -1,0 +1,82 @@
+.container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.form-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.form-card h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+textarea, input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 6px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.medicine-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.medicine-group input {
+  flex: 1;
+}
+
+.medicine-group button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.patient-info-card {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  align-items: center;
+}
+
+.patient-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.message.success {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+.message.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
