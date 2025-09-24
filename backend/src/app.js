@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
+const path = require("path");
 
 const authRouter = require('./routes/auth');
 const appointmentsRouter = require("./routes/appointments");
@@ -10,12 +11,13 @@ const doctorsRouter = require("./routes/doctors");
 
 const app = express();
 
-// CORS for deployed frontend
+// CORS
 app.use(cors({
   origin: "https://hospitalintern-frontend.onrender.com",
   credentials: true
 }));
 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
@@ -29,7 +31,7 @@ app.use((req, res, next) => {
 });
 
 // Serve uploads
-app.use('/uploads', express.static('uploads'));
+app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // API Routes
 app.use('/api/auth', authRouter);
@@ -38,9 +40,12 @@ app.use("/api/prescriptions", prescriptionsRouter);
 app.use("/api/patients", patientsRouter);
 app.use("/api/doctors", doctorsRouter);
 
-// Root endpoint
-app.get("/", (req, res) => {
-  res.send("Hospital API is running");
+// Serve React frontend
+app.use(express.static(path.join(__dirname, '../dist')));
+app.get('*', (req, res) => {
+  if (!req.path.startsWith('/api')) {
+    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
+  }
 });
 
 // 404 Handler

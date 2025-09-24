@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "main": "src/server.js",
   "description": "Clinix Sphere Doctor-Patient Appointment & Digital Prescription Backend",
-  "author": "",
-  "license": "ISC",
   "scripts": {
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",

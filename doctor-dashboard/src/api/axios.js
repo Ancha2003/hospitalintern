@@ -1,8 +1,7 @@
 import axios from "axios";
 
-// Backend URL
 const api = axios.create({
-  baseURL: "https://hospitalintern.onrender.com/api",
+  baseURL: "/api", // relative URL because frontend is served from same backend
   headers: { "Content-Type": "application/json" },
 });
 
@@ -13,7 +12,7 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle 401 errors
+// Handle 401 globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {
