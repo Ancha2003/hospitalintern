@@ -14,10 +14,7 @@ function PatientRegistration() {
     setForm({ ...form, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setAvatarFile(file);
-  };
+  const handleFileChange = (e) => setAvatarFile(e.target.files[0]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

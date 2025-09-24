@@ -11,7 +11,7 @@ const doctorsRouter = require("./routes/doctors");
 
 const app = express();
 
-// CORS
+// CORS for deployed frontend
 app.use(cors({
   origin: "https://hospitalintern-frontend.onrender.com",
   credentials: true
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Serve uploads
+// Serve uploaded files
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 // API Routes
@@ -40,7 +40,7 @@ app.use("/api/prescriptions", prescriptionsRouter);
 app.use("/api/patients", patientsRouter);
 app.use("/api/doctors", doctorsRouter);
 
-// Serve React frontend
+// Serve React frontend if backend also serves frontend
 app.use(express.static(path.join(__dirname, '../dist')));
 app.get('*', (req, res) => {
   if (!req.path.startsWith('/api')) {

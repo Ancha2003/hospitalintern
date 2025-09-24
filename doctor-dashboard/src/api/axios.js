@@ -1,18 +1,19 @@
 import axios from "axios";
 
+// Use your deployed backend URL
 const api = axios.create({
-  baseURL: "/api", // relative URL because frontend is served from same backend
+  baseURL: "https://hospitalintern.onrender.com/api",
   headers: { "Content-Type": "application/json" },
 });
 
-// Add JWT token
+// JWT token interceptor
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token");
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
 
-// Handle 401 globally
+// Handle 401 errors globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {
