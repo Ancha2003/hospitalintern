@@ -7,11 +7,15 @@ function PatientLogin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  // Redirect if already logged in
   useEffect(() => {
     const role = localStorage.getItem("role");
-    if (role === "patient") navigate("/patient-dashboard", { replace: true });
+    if (role === "patient") navigate("/patient-dashboard");
+    else if (role === "doctor") navigate("/appointments");
+    else setLoading(false);
   }, [navigate]);
 
   const handleLogin = async (e) => {
@@ -36,14 +40,28 @@ function PatientLogin() {
     }
   };
 
+  if (loading) return <div>Loading...</div>;
+
   return (
     <div className="login-page">
       <div className="login-card">
         <h2>Patient Login</h2>
         {message && <p className="login-error">{message}</p>}
         <form onSubmit={handleLogin}>
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
           <button type="submit">Login</button>
         </form>
       </div>

@@ -40,14 +40,6 @@ app.use("/api/prescriptions", prescriptionsRouter);
 app.use("/api/patients", patientsRouter);
 app.use("/api/doctors", doctorsRouter);
 
-// Serve React frontend if backend also serves frontend
-app.use(express.static(path.join(__dirname, '../dist')));
-app.get('*', (req, res) => {
-  if (!req.path.startsWith('/api')) {
-    res.sendFile(path.join(__dirname, '../dist', 'index.html'));
-  }
-});
-
 // 404 Handler
 app.use((req, res, next) => {
   res.status(404).json({ error: "Route not found" });

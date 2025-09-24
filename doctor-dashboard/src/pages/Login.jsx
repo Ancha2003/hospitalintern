@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import "../styles/login.css";
@@ -7,7 +7,16 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+
+  // Redirect if already logged in
+  useEffect(() => {
+    const role = localStorage.getItem("role");
+    if (role === "doctor") navigate("/appointments");
+    else if (role === "patient") navigate("/patient-dashboard");
+    else setLoading(false);
+  }, [navigate]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,17 +26,18 @@ function Login() {
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.user.role);
 
-      setMessage("✅ Login successful! Redirecting...");
+      if (res.data.user.role === "doctor") navigate("/appointments");
+      else if (res.data.user.role === "patient") navigate("/patient-dashboard");
+      else setMessage("❌ Unknown user role");
 
-      setTimeout(() => {
-        if (res.data.user.role === "doctor") navigate("/appointments");
-        else if (res.data.user.role === "patient") navigate("/patient-dashboard");
-      }, 1500);
+      setMessage("✅ Login successful! Redirecting...");
     } catch (err) {
       console.error(err);
       setMessage(err.response?.data?.error || "❌ Login failed");
     }
   };
+
+  if (loading) return <div>Loading...</div>;
 
   return (
     <div className="login-page">
