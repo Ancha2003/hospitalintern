@@ -10,11 +10,17 @@ const doctorsRouter = require("./routes/doctors");
 
 const app = express();
 
-app.use(cors());
+// CORS for deployed frontend
+app.use(cors({
+  origin: "https://hospitalintern-frontend.onrender.com",
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
+// Prevent caching
 app.use((req, res, next) => {
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Pragma', 'no-cache');
@@ -22,23 +28,27 @@ app.use((req, res, next) => {
   next();
 });
 
+// Serve uploads
 app.use('/uploads', express.static('uploads'));
 
+// API Routes
 app.use('/api/auth', authRouter);
 app.use("/api/appointments", appointmentsRouter);
 app.use("/api/prescriptions", prescriptionsRouter);
 app.use("/api/patients", patientsRouter);
 app.use("/api/doctors", doctorsRouter);
 
-
+// Root endpoint
 app.get("/", (req, res) => {
   res.send("Hospital API is running");
 });
 
+// 404 Handler
 app.use((req, res, next) => {
   res.status(404).json({ error: "Route not found" });
 });
 
+// Global Error Handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).json({ error: err.message || "Internal Server Error" });

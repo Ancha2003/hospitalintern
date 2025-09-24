@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
-  const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/clinix-sphere';
-
+  const uri = process.env.MONGO_URI;
   try {
-    await mongoose.connect(uri); // ✅ No options needed in Mongoose 6+
+    await mongoose.connect(uri); // Mongoose 6+ no options needed
     console.log('✅ MongoDB connected');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
