@@ -1,3 +1,9 @@
+login as doctor
+email-meera.singh@clinix.com
+rajesh.kumar@clinix.com
+password - doctor123
+
+
 Absolutely! Here’s a **full README template** for your Hospital Management project with all key information filled in. You can copy it directly and adjust details if needed:
 
 ---
